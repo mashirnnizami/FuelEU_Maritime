@@ -1,17 +1,32 @@
-## FuelEU Maritime Compliance Platform
+# FuelEU Maritime Compliance Platform
 
-Hexagonal full-stack demo implementing:
-- Routes
-- Comparison
-- Banking
-- Pooling
+## Overview
+Full-stack FuelEU compliance dashboard implementing:
+- Routes & baselines
+- GHG comparison
+- Banking (Article 20)
+- Pooling (Article 21)
 
-### Run
+## Architecture
+Hexagonal (Ports & Adapters)
+- Core domain isolated
+- UI + HTTP as adapters
+
+## Run
 Backend:
-`cd backend && npm install && npm run dev`
+cd backend
+npm install
+npm run dev
 
 Frontend:
-`cd frontend && npm install && npm run dev`
+cd frontend
+npm install
+npm run dev
 
-### Architecture
-Core domain isolated from frameworks.
+## APIs
+GET /routes
+POST /routes/:id/baseline
+GET /routes/comparison
+GET /compliance/cb
+POST /banking/bank
+POST /pools

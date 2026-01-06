@@ -1,3 +1,4 @@
-AI agents accelerated scaffolding by ~50%.
-Domain logic still required human validation.
-Next time: more tests generated via agents.
+Using AI agents accelerated setup and boilerplate by ~60%.
+The biggest value was architecture scaffolding.
+Critical logic (CB, pooling) still required manual reasoning.
+Next iteration: generate more tests using AI.

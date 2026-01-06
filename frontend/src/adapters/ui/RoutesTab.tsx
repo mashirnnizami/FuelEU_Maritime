@@ -1,14 +1,23 @@
-export default function RoutesTab({ routes }: any) {
+export default function RoutesTab({ routes, onBaseline }: any) {
   return (
-    <table>
+    <table className="border w-full">
       <thead>
-        <tr><th>ID</th><th>GHG</th></tr>
+        <tr>
+          <th>ID</th>
+          <th>GHG</th>
+          <th>Baseline</th>
+        </tr>
       </thead>
       <tbody>
-        {routes.map((r:any)=>(
+        {routes.map((r: any) => (
           <tr key={r.routeId}>
             <td>{r.routeId}</td>
             <td>{r.ghgIntensity}</td>
+            <td>
+              {r.isBaseline ? "✅" : (
+                <button onClick={() => onBaseline(r.routeId)}>Set</button>
+              )}
+            </td>
           </tr>
         ))}
       </tbody>

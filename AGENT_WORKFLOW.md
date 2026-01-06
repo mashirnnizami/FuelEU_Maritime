@@ -2,20 +2,23 @@
 
 ## Agents Used
 - ChatGPT (architecture, domain modeling)
-- GitHub Copilot (boilerplate, TS interfaces)
+- GitHub Copilot (boilerplate generation)
 
 ## Prompts & Outputs
 Prompt: "Implement FuelEU CB formula"
-→ Generated CB computation
+→ Generated energy × (target − actual)
 
-Refined to include energy conversion.
+Prompt: "Greedy pooling algorithm"
+→ Refined to enforce FuelEU constraints
 
 ## Validation
-Manually validated against sample dataset.
+- Cross-checked formulas with regulation
+- Manually tested negative CB scenarios
 
 ## Observations
-Saved significant time on structure.
-Caught hallucinated constants manually.
+Saved time scaffolding hexagonal layers.
+Hallucinated constants once; corrected manually.
 
 ## Best Practices
-Used agents for scaffolding, not logic authority.
+- AI for structure
+- Human for domain correctness

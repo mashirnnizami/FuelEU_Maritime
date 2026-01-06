@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
+import { useRoutes } from "./core/application/useRoutes";
 import RoutesTab from "./adapters/ui/RoutesTab";
 import CompareTab from "./adapters/ui/CompareTab";
+import BankingTab from "./adapters/ui/BankingTab";
+import PoolingTab from "./adapters/ui/PoolingTab";
 
 export default function App() {
-  const [routes, setRoutes] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/routes")
-      .then(r => r.json())
-      .then(setRoutes);
-  }, []);
+  const { routes, setBaseline } = useRoutes();
 
   return (
-    <div className="p-6">
-      <h1 className="text-xl font-bold">FuelEU Dashboard</h1>
-      <RoutesTab routes={routes} />
+    <div className="p-6 space-y-6">
+      <h1 className="text-2xl font-bold">FuelEU Maritime Dashboard</h1>
+
+      <RoutesTab routes={routes} onBaseline={setBaseline} />
       <CompareTab />
+      <BankingTab />
+      <PoolingTab />
     </div>
   );
 }
